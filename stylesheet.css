@@ -110,6 +110,73 @@ h2 {
   font-size: 32px;
 }
 
+.profile-photo-cell {
+  padding: 2.5% 2% 2.5% 2.5%;
+  width: 37%;
+  max-width: 37%;
+  vertical-align: middle;
+}
+
+.profile-media {
+  width: 80%;
+  max-width: 80%;
+  margin-left: auto;
+  transform: translateY(12px);
+}
+
+.profile-photo {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 0;
+}
+
+.profile-links {
+  width: max-content;
+  margin: 12px 0 0 50%;
+  line-height: 1.4;
+  text-align: center;
+  transform: translateX(-50%);
+  white-space: nowrap;
+}
+
+@media (max-width: 600px) {
+  .profile-photo-cell {
+    padding: 2.5%;
+  }
+
+  .profile-media {
+    margin-left: 0;
+    transform: none;
+  }
+
+  .profile-links {
+    width: 100%;
+    margin: 12px 0 0;
+    text-align: center;
+    transform: none;
+    white-space: normal;
+  }
+}
+
+.research-heading-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 0 16px;
+}
+
+.research-authorship-note {
+  margin-left: auto;
+  color: #555;
+  font-size: 0.625rem;
+  line-height: 1.2;
+  text-align: right;
+}
+
 .one {
   width: 160px;
   height: 160px;
