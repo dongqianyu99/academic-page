@@ -1,3 +1,31 @@
+@font-face {
+  font-family: 'Anthropic Sans Text';
+  font-style: normal;
+  font-weight: 400;
+  src: local('AnthropicSansText-Regular');
+}
+
+@font-face {
+  font-family: 'Anthropic Sans Text';
+  font-style: normal;
+  font-weight: 600;
+  src: local('AnthropicSansText-Semibold');
+}
+
+@font-face {
+  font-family: 'Anthropic Sans Text';
+  font-style: italic;
+  font-weight: 400;
+  src: local('AnthropicSansText-Italic');
+}
+
+@font-face {
+  font-family: 'Anthropic Sans Text';
+  font-style: italic;
+  font-weight: 500;
+  src: local('AnthropicSansText-MediumItalic');
+}
+
 /* latin-ext */
 @font-face {
   font-family: 'Lato';
@@ -81,33 +109,135 @@ th,
 tr,
 p,
 a {
-  font-family: 'Lato', Verdana, Helvetica, sans-serif;
+  font-family: 'Anthropic Sans Text', 'Lato', Verdana, Helvetica, sans-serif;
   font-size: 14px;
 }
 
 strong {
-  font-family: 'Lato', Verdana, Helvetica, sans-serif;
+  font-weight: 600;
+  font-family: 'Anthropic Sans Text', 'Lato', Verdana, Helvetica, sans-serif;
   font-size: 14px;
 }
 
 h2 {
   margin: 0;
   font-weight: normal;
-  font-family: 'Lato', Verdana, Helvetica, sans-serif;
+  font-family: 'Anthropic Sans Text', 'Lato', Verdana, Helvetica, sans-serif;
   font-size: 22px;
 }
 
 .papertitle {
-  font-family: 'Lato', Verdana, Helvetica, sans-serif;
+  display: block;
+  margin-bottom: 3px;
+  font-family: 'Anthropic Sans Text', 'Lato', Verdana, Helvetica, sans-serif;
   font-size: 14px;
-  font-weight: 700;
+  font-weight: 600;
 }
 
 .name {
   padding-top: 20px;
   margin: 0;
-  font-family: 'Lato', Verdana, Helvetica, sans-serif;
+  font-family: 'Anthropic Sans Text', 'Lato', Verdana, Helvetica, sans-serif;
   font-size: 32px;
+}
+
+.section-index {
+  margin: 16px 16px 0;
+}
+
+.section-index-inner {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 16px;
+  border-bottom: 1px solid #ddd;
+}
+
+.section-index-title {
+  width: 100%;
+  margin: 0;
+  padding-bottom: 8px;
+  color: #666;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.section-index a {
+  position: relative;
+  display: block;
+  padding: 10px 0;
+  color: #555;
+  line-height: 1.4;
+}
+
+.section-index a:hover,
+.section-index a:focus-visible,
+.section-index a[aria-current="location"] {
+  color: #3a5590;
+}
+
+.section-index a[aria-current="location"] {
+  font-weight: 600;
+}
+
+.section-index a[aria-current="location"]::before {
+  content: "";
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: currentColor;
+}
+
+.section-index a:focus-visible {
+  outline: 2px solid #3a5590;
+  outline-offset: 4px;
+}
+
+h2[id] {
+  scroll-margin-top: 24px;
+}
+
+@media (min-width: 1200px) {
+  .section-index {
+    position: fixed;
+    top: 50%;
+    left: max(24px, calc(25% - 264px));
+    width: 128px;
+    margin: 0;
+    transform: translateY(-50%);
+  }
+
+  .section-index-inner {
+    display: block;
+    border-bottom: 0;
+    border-left: 1px solid #ddd;
+  }
+
+  .section-index-title {
+    width: auto;
+    padding: 0 16px 12px;
+  }
+
+  .section-index a {
+    padding: 10px 16px;
+  }
+
+  .section-index a[aria-current="location"]::before {
+    top: 0;
+    bottom: 0;
+    left: -1px;
+    right: auto;
+    width: 3px;
+    height: auto;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
 }
 
 .profile-photo-cell {
@@ -177,6 +307,82 @@ h2 {
   text-align: right;
 }
 
+.career-section {
+  margin: 28px 0 0;
+}
+
+.career-section h2 {
+  margin-bottom: 18px;
+  padding: 0 16px;
+}
+
+.institution-entry {
+  display: grid;
+  grid-template-columns: 192px minmax(0, 1fr);
+  align-items: center;
+  gap: 8px;
+  padding: 16px 8px 16px 0;
+}
+
+.institution-logo {
+  width: 112px;
+  height: 112px;
+  object-fit: contain;
+  justify-self: center;
+}
+
+.institution-details {
+  min-width: 0;
+  line-height: 1.5;
+}
+
+.institution-heading {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 4px 16px;
+}
+
+.institution-heading h3 {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.institution-details p {
+  margin: 4px 0 0;
+}
+
+.institution-heading .institution-date {
+  margin: 0;
+  color: #555;
+}
+
+.institution-note,
+tr.pub-block p {
+  color: #555;
+}
+
+@media (max-width: 600px) {
+  .institution-entry {
+    grid-template-columns: 64px minmax(0, 1fr);
+    align-items: flex-start;
+    gap: 16px;
+    padding: 16px;
+  }
+
+  .institution-logo {
+    width: 64px;
+    height: 64px;
+  }
+
+  .institution-heading {
+    flex-direction: column;
+    gap: 2px;
+  }
+}
+
 .one {
   width: 160px;
   height: 160px;
@@ -216,7 +422,19 @@ span.highlight {
   box-shadow: 0 0 0 rgba(0,0,0,0);
 }
 
-.pub-block:hover {
+.pub-block:hover,
+.institution-entry:focus-within {
   box-shadow: 0 4px 12px rgba(0,0,0,0.15);
   transform: translateY(-2px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .institution-entry {
+    transition: none;
+  }
+
+  .institution-entry:hover,
+  .institution-entry:focus-within {
+    transform: none;
+  }
 }
