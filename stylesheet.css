@@ -26,6 +26,11 @@ a:hover {
   text-decoration: none;
 }
 
+.paper-authors,
+.paper-authors a:not(:hover):not(:focus) {
+  color: #555;
+}
+
 body,
 td,
 th,
@@ -55,6 +60,23 @@ h2 {
   font-family: 'Source Serif 4', Georgia, 'Times New Roman', serif;
   font-size: 14px;
   font-weight: 600;
+}
+
+.paper-note {
+  display: block;
+  margin-top: 1px;
+  color: #727272;
+  font-size: 10.5px;
+  line-height: 1.3;
+}
+
+.paper-links,
+.paper-venue {
+  margin-top: 8px;
+}
+
+tr.pub-block .paper-summary {
+  margin: 8px 0 0;
 }
 
 .name {
